@@ -23,7 +23,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <div class="btn-group">
             <button type="button" class="btn btn-sm btn-outline-secondary">
-              View
+              <router-link :to="'/blog/' + post.id"> View </router-link>
             </button>
             <button type="button" class="btn btn-sm btn-outline-secondary">
               Edit
