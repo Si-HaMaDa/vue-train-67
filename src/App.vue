@@ -1,11 +1,21 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/contact">Contact</router-link>
-  </div>
+  <MyHeader />
   <router-view />
+  <my-footer />
 </template>
+
+<script>
+import MyHeader from "./components/global/MyHeader.vue";
+import MyFooter from "./components/global/MyFooter.vue";
+
+export default {
+  name: "App",
+  components: {
+    MyHeader,
+    MyFooter,
+  },
+};
+</script>
 
 <style lang="scss">
 #app {
