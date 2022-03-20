@@ -33,61 +33,18 @@ export default {
   components: {
     mainPost,
   },
+  mounted: function () {
+    console.log("Blog Mounted!");
+    this.axios.get(this.api).then((response) => {
+      console.log(response.data);
+      this.posts = response.data;
+    });
+  },
   data: () => {
     return {
       name: "My Blog",
-      posts: [
-        {
-          title: "one",
-          content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam adipisci",
-        },
-        {
-          title: "two",
-          content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam adipisci",
-        },
-        {
-          title: "three",
-          content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam adipisci",
-        },
-        {
-          title: "four",
-          content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam adipisci",
-        },
-        {
-          title: "five",
-          content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam adipisci",
-        },
-        {
-          title: "six",
-          content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam adipisci",
-        },
-        {
-          title: "seven",
-          content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam adipisci",
-        },
-        {
-          title: "egiht",
-          content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam adipisci",
-        },
-        {
-          title: "nine",
-          content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam adipisci",
-        },
-        {
-          title: "ten",
-          content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam adipisci",
-        },
-      ],
+      api: "https://jsonplaceholder.typicode.com/posts",
+      posts: [],
     };
   },
 };

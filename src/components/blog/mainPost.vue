@@ -1,5 +1,5 @@
 <template>
-  <div v-for="post in posts" :key="post" :id="post" class="col">
+  <div v-for="post in posts" :key="post" :id="post.id" class="col">
     <div class="card shadow-sm">
       <svg
         class="bd-placeholder-img card-img-top"
@@ -19,7 +19,7 @@
       </svg>
 
       <div class="card-body">
-        <p class="card-text">{{ post.content }}.</p>
+        <p class="card-text">{{ post.body }}.</p>
         <div class="d-flex justify-content-between align-items-center">
           <div class="btn-group">
             <button type="button" class="btn btn-sm btn-outline-secondary">
